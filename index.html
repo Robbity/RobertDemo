@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROBERT'S AMAZING WEBSITE!!!</title>
+    <style>
+        /* Base styles with eye-burning background */
+        body {
+            background: repeating-radial-gradient(circle, #ff00ff, #00ff00, #ff0000);
+            font-family: "Comic Sans MS", cursive;
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👆</text></svg>"), auto;
+            margin: 0;
+            padding: 0;
+            animation: backgroundShift 5s infinite;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* Horrifying header */
+        header {
+            background-color: lime;
+            border: 10px dashed blue;
+            padding: 20px;
+            box-shadow: 0 0 50px red;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 72px;
+            color: yellow;
+            text-shadow: 5px 5px 0 red, 10px 10px 0 blue;
+            transform: rotate(-5deg);
+            animation: bounce 2s infinite;
+            margin: 0;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Terrible navigation */
+        nav {
+            background-color: #ff00ff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: yellow;
+            font-family: "Times New Roman", serif;
+            font-size: 24px;
+            margin: 0 15px;
+            text-decoration: blink;
+            background-color: #000080;
+            padding: 5px;
+            border-radius: 50%;
+            display: inline-block;
+            transform: skew(-20deg);
+        }
+
+        nav a:hover {
+            font-size: 36px;
+            color: red;
+            background-color: green;
+            transition: all 0.3s;
+            transform: skew(20deg);
+        }
+
+        /* Main content area */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-gap: 5px;
+            padding: 10px;
+        }
+
+        .sidebar {
+            background-color: #ffff00;
+            border: 5px dotted #ff00ff;
+            padding: 15px;
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            color: blue;
+            text-align: justify;
+            overflow: hidden;
+        }
+
+        .sidebar-right {
+            background-color: #00ffff;
+            color: #ff0000;
+            border: 5px ridge #ff8800;
+            font-family: Impact, sans-serif;
+        }
+
+        .main-content {
+            background-color: #000000;
+            color: #00ff00;
+            padding: 20px;
+            border: 10px groove #ff00ff;
+            font-family: "Arial Black", sans-serif;
+            font-size: 16px;
+            line-height: 2.5;
+            letter-spacing: 3px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* The "about Robert" section */
+        .robert-info {
+            padding: 20px;
+            background-color: #800080;
+            color: white;
+            font-family: "Papyrus", fantasy;
+            border: 8px inset gold;
+            margin: 20px 0;
+            position: relative;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .robert-info h2 {
+            font-size: 36px;
+            text-transform: uppercase;
+            color: #00ff00;
+            text-shadow: 2px 2px 4px #000000;
+            transform: rotate(2deg);
+            margin-bottom: 30px;
+        }
+
+        .robert-photo {
+            border: 15px ridge gold;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #ff9900;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            transform: rotate(10deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: "Wingdings", sans-serif;
+            font-size: 24px;
+            border-top: 10px dotted red;
+            margin-top: 20px;
+        }
+
+        /* Blinking text effect */
+        .blink {
+            animation: blinker 0.8s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+
+        /* Visitor counter */
+        .visitor-counter {
+            background-color: #000000;
+            color: #ff0000;
+            border: 5px double #ffffff;
+            padding: 10px;
+            font-family: "Digital", monospace;
+            font-size: 20px;
+            text-align: center;
+            margin: 20px auto;
+            width: 200px;
+        }
+
+        /* Marquee styling */
+        .marquee {
+            background-color: yellow;
+            color: red;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: "Comic Sans MS", cursive;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            padding-left: 100%;
+            animation: marquee 15s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* Popup */
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            border: 10px outset purple;
+            padding: 20px;
+            color: yellow;
+            font-size: 24px;
+            z-index: 100;
+            box-shadow: 0 0 50px lime;
+            animation: shake 0.5s infinite;
+            display: none;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            25% { transform: translate(-53%, -52%) rotate(5deg); }
+            50% { transform: translate(-50%, -55%) rotate(0deg); }
+            75% { transform: translate(-47%, -52%) rotate(-5deg); }
+            100% { transform: translate(-50%, -50%) rotate(0deg); }
+        }
+
+        .close-button {
+            background-color: yellow;
+            color: red;
+            border: 5px outset blue;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-weight: bold;
+            font-family: "Impact", sans-serif;
+        }
+
+        /* Floating elements */
+        .floating {
+            position: fixed;
+            animation: float 6s ease-in-out infinite;
+            z-index: 50;
+            font-size: 48px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+
+        .float1 {
+            top: 20%;
+            left: 5%;
+        }
+
+        .float2 {
+            top: 60%;
+            right: 10%;
+        }
+
+        .float3 {
+            bottom: 15%;
+            left: 10%;
+        }
+
+        /* Horrible tables */
+        table {
+            border-collapse: separate;
+            border-spacing: 5px;
+            margin: 20px auto;
+            background-color: #ff00ff;
+        }
+
+        th {
+            background-color: lime;
+            color: purple;
+            font-family: "Comic Sans MS", cursive;
+            padding: 10px;
+            border: 3px dotted blue;
+            font-size: 24px;
+            transform: rotate(-3deg);
+        }
+
+        td {
+            border: 3px solid yellow;
+            padding: 8px;
+            background-color: #000080;
+            color: orange;
+            font-family: "Courier New", monospace;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) td {
+            background-color: green;
+            transform: skewX(5deg);
+        }
+
+        tr:nth-child(odd) td {
+            background-color: purple;
+            transform: skewX(-5deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="floating float1">🤩</div>
+    <div class="floating float2">🚀</div>
+    <div class="floating float3">💯</div>
+
+    <header>
+        <h1 class="blink">WELCOME TO ROBERT'S WORLD!!!</h1>
+    </header>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            ★★★ ROBERT IS THE BEST! ROBERT IS THE COOLEST! ROBERT RULES! ROBERT IS AWESOME! ROBERT FOR PRESIDENT! ★★★
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT ROBERT</a>
+        <a href="#photos">ROBERT'S PHOTOS</a>
+        <a href="#blog">ROBERT'S BLOG</a>
+        <a href="#contact">CONTACT ROBERT</a>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3 class="blink">ROBERT'S LINKS</h3>
+            <ul>
+                <li><a href="#" style="color: red; font-size: 24px;">ROBERT'S FACEBOOK</a></li>
+                <li><a href="#" style="color: blue; font-size: 20px;">ROBERT'S TWITTER</a></li>
+                <li><a href="#" style="color: green; font-size: 28px;">ROBERT'S INSTAGRAM</a></li>
+                <li><a href="#" style="color: purple; font-size: 22px;">ROBERT'S LINKEDIN</a></li>
+            </ul>
+
+            <div class="visitor-counter">
+                <span class="blink">VISITORS: 12345678</span>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <h2 style="color: #ff00ff; font-size: 48px; text-decoration: underline wavy yellow;">ALL ABOUT ROBERT!!!</h2>
+            
+            <div class="robert-info">
+                <h2>WHO IS ROBERT?</h2>
+                <div class="robert-photo">👨</div>
+                <p style="font-size: 22px; color: yellow;">
+                    Robert is <span style="font-size: 28px; color: lime;">AMAZING</span>! Robert is 
+                    <span style="font-size: 24px; color: cyan; font-family: Impact;">INCREDIBLE</span>! 
+                    Robert is the <span style="font-size: 30px; color: orange; font-family: 'Comic Sans MS';">BEST PERSON</span> 
+                    you will ever meet in your <span style="font-size: 26px; color: magenta; text-decoration: underline;">ENTIRE LIFE</span>!!!
+                </p>
+            </div>
+
+            <table>
+                <tr>
+                    <th>ROBERT'S FAVORITES</th>
+                    <th>ROBERT'S HOBBIES</th>
+                    <th>ROBERT'S SKILLS</th>
+                </tr>
+                <tr>
+                    <td>Pizza with EXTRA cheese!</td>
+                    <td>Collecting stamps!</td>
+                    <td>Expert whistler!</td>
+                </tr>
+                <tr>
+                    <td>Monster energy drinks!</td>
+                    <td>Extreme ironing!</td>
+                    <td>Speed typing!</td>
+                </tr>
+                <tr>
+                    <td>Neon green cars!</td>
+                    <td>Underwater basketweaving!</td>
+                    <td>Professional napper!</td>
+                </tr>
+            </table>
+
+            <div style="background-color: #ff0000; padding: 20px; border: 10px dotted yellow; margin: 20px 0;">
+                <h3 style="color: cyan; font-family: 'Papyrus', fantasy; font-size: 36px; transform: rotate(-3deg);">ROBERT'S DAILY SCHEDULE</h3>
+                <ol style="color: white; font-size: 20px; font-family: 'Comic Sans MS', cursive;">
+                    <li>6:00 AM - Wake up and SCREAM "I AM ROBERT!"</li>
+                    <li>7:00 AM - Eat breakfast (ALWAYS cereal with HOT SAUCE)</li>
+                    <li>9:00 AM - Look in mirror and say "ROBERT IS AWESOME" 100 times</li>
+                    <li>12:00 PM - Lunch break (ALWAYS pizza with EXTRA cheese)</li>
+                    <li>3:00 PM - Practice EXTREME hobbies</li>
+                    <li>6:00 PM - Dinner (ALWAYS burgers with ICE CREAM)</li>
+                    <li>10:00 PM - Sleep while listening to recordings of people saying "ROBERT"</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="sidebar sidebar-right">
+            <h3 class="blink" style="color: red;">ROBERT'S QUOTES</h3>
+            <blockquote style="border-left: 5px solid lime; padding-left: 10px; color: blue; font-family: 'Times New Roman', serif;">
+                "To be or not to be ROBERT, that is NEVER a question!"
+            </blockquote>
+            <blockquote style="border-left: 5px solid pink; padding-left: 10px; color: green; font-family: 'Arial', sans-serif;">
+                "ROBERT is not just a name, it's a lifestyle!"
+            </blockquote>
+            <blockquote style="border-left: 5px solid yellow; padding-left: 10px; color: purple; font-family: 'Courier New', monospace;">
+                "In a world full of Johns, be a ROBERT!"
+            </blockquote>
+
+            <h3 class="blink" style="color: orange; margin-top: 30px;">ROBERT'S AWARDS</h3>
+            <ul style="list-style-type: '🏆 ';">
+                <li style="color: magenta;">Best ROBERT of 2023</li>
+                <li style="color: cyan;">Most ROBERT-like Person</li>
+                <li style="color: yellow;">ROBERT of the Century</li>
+                <li style="color: lime;">Ultimate ROBERT Award</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="marquee" style="background-color: #ff00ff; color: yellow;">
+        <div class="marquee-content">
+            ❤️❤️❤️ THANK YOU FOR VISITING ROBERT'S AMAZING WEBSITE! COME BACK SOON! ROBERT APPRECIATES YOU! ❤️❤️❤️
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 ROBERT'S WORLD. ALL RIGHTS RESERVED BY ROBERT!</p>
+        <p style="font-family: 'Arial', sans-serif; font-size: 18px; color: lime;">
+            This website is best viewed with eyes closed!
+        </p>
+        <p style="font-family: 'Comic Sans MS', cursive; font-size: 16px; color: yellow;">
+            Last updated: When ROBERT felt like it!
+        </p>
+    </footer>
+
+    <div id="popup">
+        <h2>!!!CONGRATULATIONS!!!</h2>
+        <p>YOU are the 1,000,000th visitor to ROBERT'S website!!!</p>
+        <p>Click OK to claim your FREE ROBERT MERCHANDISE!!!</p>
+        <button class="close-button" onclick="document.getElementById('popup').style.display='none';">OK!!!</button>
+    </div>
+
+    <script>
+        // Show popup after 3 seconds
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'block';
+        }, 3000);
+
+        // Add blinking text everywhere
+        setInterval(function() {
+            var elements = document.getElementsByClassName('blink');
+            for (var i = 0; i < elements.length; i++) {
+                if (elements[i].style.visibility === 'hidden') {
+                    elements[i].style.visibility = 'visible';
+                } else {
+                    elements[i].style.visibility = 'hidden';
+                }
+            }
+        }, 500);
+
+        // Add annoying alert on mouse movement
+        var alertShown = false;
+        document.addEventListener('mousemove', function() {
+            if (!alertShown && Math.random() < 0.001) {
+                alert("ROBERT says: Thanks for visiting my website!");
+                alertShown = true;
+                setTimeout(function() { alertShown = false; }, 30000);
+            }
+        });
+    </script>
+</body>
+</html>
